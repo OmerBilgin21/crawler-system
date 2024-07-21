@@ -1,0 +1,44 @@
+services:
+    explorer:
+        build:
+            dockerfile: ./apps/explorer/Dockerfile
+        container_name: explorer
+        ports:
+            - 8000:8000
+        depends_on:
+            - postgresql
+        environment:
+            - ENV=prod
+            - DB_USER_NAME=postgres
+            - DB_NAME=future_demand_containerised
+            - DB_HOST=postgresql
+
+    controller:
+        build:
+            dockerfile: ./apps/controller/Dockerfile
+        container_name: controller
+        depends_on:
+            - postgresql
+        ports:
+            - 8080:8080
+        environment:
+            - ENV=prod
+            - DB_USER_NAME=postgres
+            - DB_NAME=future_demand_containerised
+            - DB_HOST=postgresql
+
+    postgresql:
+        image: postgres:latest
+        container_name: postgresql
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=future_demand_containerised
+            - POSTGRES_HOST_AUTH_METHOD=trust
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+
+volumes:
+    postgres_data:
+        driver: local
