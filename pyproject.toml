@@ -1,0 +1,52 @@
+[tool.ruff]
+exclude = [".git", ".ruff_cache", ".venv", "venv", "~/**", "~/.**"]
+target-version = "py310"
+
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+ignore = [
+    "ANN401",
+    "B008",
+    "D100",
+    "D101",
+    "D104",
+    "D203",
+    "D203",
+    "D206",
+    "D212",
+    "D213",
+    "D400",
+    "D401",
+    "D406",
+    "D407",
+    "D413",
+    "D415",
+    "ERA001",
+    "FIX004",
+    "G001",
+    "N815",
+    "PLR0913",
+    "S104",
+    "TD003",
+    "TRY201",
+    "TRY302",
+    "UP032",
+    "W191",
+]
+
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+
+indent-style = "tab"
+
+skip-magic-trailing-comma = false
+
+line-ending = "auto"
