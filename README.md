@@ -48,15 +48,20 @@ Endpoints:
 All apps are containerised for convenience.
 
 **With Docker:**
+
 To run the system using Docker containers, run the following command:
 `docker-compose -f docker-compose.yml up`
 
 **Local:**
+
 To run the applications locally:
 
+-   Create a `.env.local` file
+-   Insert `DB_NAME=<NAME_OF_YOUR_CHOOSING>` into `.env.local`
 -   Create a virtual python environment
 -   Activate the environment
 -   Run `pip install -r requirements.txt`
+-   Run `pip install python-dotenv`
 -   Spin up your local PostgreSQL server
 -   On one shell run `python3 controller.py`
 -   On another shell run `python3 explorer.py`
