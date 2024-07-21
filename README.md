@@ -66,10 +66,10 @@ To run the applications locally:
 -   On one shell run `python3 controller.py`
 -   On another shell run `python3 explorer.py`
 
-##### Tests:
+##### Tests
 
-There are 18 tests in total.
-Test files have the *test\_<FILE*NAME>\* prefix and the system they are for as their name.
+There are 18 tests in total.  
+Test files have the test\_<FILE_NAME> prefix and the system they are for as their name.  
 To check out the tests, please refer to `apps/tests`
 
 **How to run the tests:**
@@ -81,6 +81,6 @@ To check out the tests, please refer to `apps/tests`
 -   Run `pip install -r requirements.txt`
 -   Run `pytest` in your shell
 
-##### Assumptions:
+##### Assumptions
 
 -   Assumed all the news pages have headlines, toplines and some texts. If even one of those elements are absent, I did not keep record of said page.
