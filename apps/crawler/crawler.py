@@ -76,12 +76,6 @@ def insert_to_db(link: str, headline: str, sub_headline: str, full_text: str) ->
 				session.query(ArticleVersion).filter_by(article_id=article.id).count()
 			)
 
-			print(
-				"Changes detected for: ",
-				link,
-				f"\nNew version ({version + 1}) is inserted.",
-			)
-
 			new_version = ArticleVersion(
 				article_id=article.id,
 				version=version + 1,
@@ -98,8 +92,6 @@ def insert_to_db(link: str, headline: str, sub_headline: str, full_text: str) ->
 			article.full_text = full_text
 			article.last_update = last_update
 
-		else:
-			print("Page hasn't changed: ", link)
 	else:
 		article = Article(
 			url=link,
@@ -193,7 +185,6 @@ def crawler(mode: str, page: str | None = None) -> list[str] | bool:
 		# to be respectful, won't bombard their servers
 		delay = get_preferred_delay(url=link)
 		time.sleep(delay if delay else 1)
-		print("Crawling:", link)
 		crawl_data(link=link)
 
 	return True
