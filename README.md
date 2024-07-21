@@ -54,8 +54,6 @@ To run the system using Docker containers, run the following command:
 **Local:**
 To run the applications locally:
 
--   Create a file called `.env.local`
--   Insert `CONNECTION_STR=sqlite:///mock.sqlite` into your `.env.local` file
 -   Create a virtual python environment
 -   Activate the environment
 -   Run `pip install -r requirements.txt`
@@ -71,6 +69,8 @@ To check out the tests, please refer to `apps/tests`
 
 **How to run the tests:**
 
+-   Create a file called `.env.local`
+-   Insert `CONNECTION_STR=sqlite:///mock.sqlite` into your `.env.local` file
 -   Create a virtual python environment
 -   Activate the environment
 -   Run `pip install -r requirements.txt`
